@@ -66,4 +66,13 @@ public class ExpressionTypeSystemVisitor
   private Class<?> rightType(BinaryExpression e) {
     return e.getRight().accept(this);
   }
+
+@Override
+public Class<?> visitDifference(Difference d) {
+    Class<?> leftType = leftType(d);
+    Class<?> rightType = rightType(d);
+    checkIntegerType(leftType);
+    checkIntegerType(rightType);
+    return Integer.class;
+}
 }

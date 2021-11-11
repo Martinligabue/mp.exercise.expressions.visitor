@@ -89,6 +89,14 @@ public class ExpressionEvaluatorVisitorTest {
   }
 
   @Test
+  public void testDifferenceTwoIntegers() {
+    assertEquals(
+      5,
+      new Difference(new Constant(10), new Constant(5))
+        .accept(new ExpressionEvaluatorVisitor())
+    );
+  }
+  @Test
   public void testEvalSumNonIntegers() {
     ClassCastException thrown = assertThrows(
       ClassCastException.class,

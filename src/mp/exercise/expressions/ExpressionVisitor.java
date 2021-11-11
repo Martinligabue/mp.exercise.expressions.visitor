@@ -8,4 +8,6 @@ public interface ExpressionVisitor<T> {
   T visitMultiplication(Multiplication m);
 
   T visitEqual(Equal e);
+
+  T visitDifference(Difference d);
 }

@@ -29,4 +29,9 @@ public class ExpressionEvaluatorVisitor implements ExpressionVisitor<Object> {
   private Object evalLeft(BinaryExpression exp) {
     return exp.getLeft().accept(this);
   }
+
+@Override
+public Object visitDifference(Difference d) {
+    return (Integer) evalLeft(d) - (Integer) evalRight(d);
+}
 }
