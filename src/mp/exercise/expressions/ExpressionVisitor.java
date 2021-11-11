@@ -1,12 +1,11 @@
 package mp.exercise.expressions;
 
 public interface ExpressionVisitor<T> {
+  T visitConstant(Constant c);
 
-    T visitConstant(Constant c);
+  T visitSum(Sum s);
 
-    T visitSum(Sum s);
+  T visitMultiplication(Multiplication m);
 
-    T visitMultiplication(Multiplication m);
-
-    T visitEqual(Equal e);
+  T visitEqual(Equal e);
 }

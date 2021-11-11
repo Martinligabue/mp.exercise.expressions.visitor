@@ -1,7 +1,5 @@
 package mp.exercise.expressions;
 
 public interface Expression {
-
-    <T> T accept(ExpressionVisitor<T> visitor);
-
+  <T> T accept(ExpressionVisitor<T> visitor);
 }
