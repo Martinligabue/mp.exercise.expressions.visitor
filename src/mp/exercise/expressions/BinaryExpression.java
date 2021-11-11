@@ -5,7 +5,7 @@ public abstract class BinaryExpression implements Expression {
     private Expression left;
     private Expression right;
 
-    public BinaryExpression(Expression left, Expression right) {
+    protected BinaryExpression(Expression left, Expression right) {
         this.left = left;
         this.right = right;
     }

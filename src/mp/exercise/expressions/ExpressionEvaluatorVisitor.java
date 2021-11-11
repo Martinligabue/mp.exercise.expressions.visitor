@@ -9,16 +9,12 @@ public class ExpressionEvaluatorVisitor implements ExpressionVisitor<Object> {
 
     @Override
     public Object visitSum(Sum s) {
-        return (Integer) evalLeft(s)
-                +
-               (Integer) evalRight(s);
+        return (Integer) evalLeft(s) + (Integer) evalRight(s);
     }
 
     @Override
     public Object visitMultiplication(Multiplication m) {
-        return (Integer) evalLeft(m)
-                *
-               (Integer) evalRight(m);
+        return (Integer) evalLeft(m) * (Integer) evalRight(m);
     }
 
     @Override
@@ -27,11 +23,13 @@ public class ExpressionEvaluatorVisitor implements ExpressionVisitor<Object> {
     }
 
     private Object evalRight(BinaryExpression exp) {
-        return exp.getRight().accept(this);
+        return exp.getRight()
+            .accept(this);
     }
 
     private Object evalLeft(BinaryExpression exp) {
-        return exp.getLeft().accept(this);
+        return exp.getLeft()
+            .accept(this);
     }
 
 }
