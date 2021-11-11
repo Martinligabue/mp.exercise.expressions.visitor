@@ -1,7 +1,5 @@
 package mp.exercise.expressions;
 
-import pattern.visitor.generic.ExpressionVisitor;
-
 public final class Constant implements Expression {
 
     private Object constantValue;

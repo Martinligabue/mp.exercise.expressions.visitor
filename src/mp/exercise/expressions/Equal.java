@@ -8,8 +8,7 @@ public final class Equal extends BinaryExpression {
 
     @Override
     public <T> T accept(ExpressionVisitor<T> visitor) {
-        //return a recursive evaluation of the two subexpressions using equals()
-        return null;
+        return visitor.visitEqual(this);
     }
-    
+
 }

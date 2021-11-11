@@ -8,7 +8,6 @@ public final class Multiplication extends BinaryExpression {
 
     @Override
     public <T> T accept(ExpressionVisitor<T> visitor) {
-        // TODO Auto-generated method stub
         return visitor.visitMultiplication(this);
     }
 

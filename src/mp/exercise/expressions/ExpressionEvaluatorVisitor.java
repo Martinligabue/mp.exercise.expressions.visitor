@@ -1,6 +1,6 @@
 package mp.exercise.expressions;
 
-public class ExpressionEvaluatorVisitor implements ExpressionVisitor<T> {
+public class ExpressionEvaluatorVisitor implements ExpressionVisitor<Object> {
 
     @Override
     public Object visitConstant(Constant c) {
@@ -9,20 +9,29 @@ public class ExpressionEvaluatorVisitor implements ExpressionVisitor<T> {
 
     @Override
     public Object visitSum(Sum s) {
-        return null;
+        return (Integer) evalLeft(s)
+                +
+               (Integer) evalRight(s);
     }
 
     @Override
     public Object visitMultiplication(Multiplication m) {
-        return null;
+        return (Integer) evalLeft(m)
+                *
+               (Integer) evalRight(m);
     }
 
     @Override
     public Object visitEqual(Equal e) {
-        return e.getLeft()
-            .accept(this)
-            .equals(e.getRight()
-                .accept(this));
+        return evalLeft(e).equals(evalRight(e));
+    }
+
+    private Object evalRight(BinaryExpression exp) {
+        return exp.getRight().accept(this);
+    }
+
+    private Object evalLeft(BinaryExpression exp) {
+        return exp.getLeft().accept(this);
     }
 
 }

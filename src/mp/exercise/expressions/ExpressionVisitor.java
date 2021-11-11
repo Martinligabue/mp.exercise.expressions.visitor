@@ -1,6 +1,7 @@
 package mp.exercise.expressions;
 
-public interface ExpressionVisitor<Object> {
+public interface ExpressionVisitor<T> {
+
     T visitConstant(Constant c);
 
     T visitSum(Sum s);
@@ -8,5 +9,4 @@ public interface ExpressionVisitor<Object> {
     T visitMultiplication(Multiplication m);
 
     T visitEqual(Equal e);
-
 }
