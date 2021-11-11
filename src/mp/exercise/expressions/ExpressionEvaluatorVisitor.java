@@ -30,8 +30,8 @@ public class ExpressionEvaluatorVisitor implements ExpressionVisitor<Object> {
     return exp.getLeft().accept(this);
   }
 
-@Override
-public Object visitDifference(Difference d) {
+  @Override
+  public Object visitDifference(Difference d) {
     return (Integer) evalLeft(d) - (Integer) evalRight(d);
-}
+  }
 }

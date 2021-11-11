@@ -96,6 +96,7 @@ public class ExpressionEvaluatorVisitorTest {
         .accept(new ExpressionEvaluatorVisitor())
     );
   }
+
   @Test
   public void testEvalSumNonIntegers() {
     ClassCastException thrown = assertThrows(
